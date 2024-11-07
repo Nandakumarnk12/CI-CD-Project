@@ -44,7 +44,7 @@ pipeline {
          stage('docker push') {
             steps {
              script {
-                withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                withDockerRegistry(toolName: 'docker', toolName: 'docker') {
                     sh 'docker tag spring-boot nandakumarnk/spring-boot'
                     sh 'docker push nandakumarnk/spring-boot'
                   }
